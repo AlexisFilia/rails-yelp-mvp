@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= "My list of #{params[:name]}'s comments" %></h1>
+  <% @reviews.each do |review| %>
+  <div>
+    <h2><%= review.content %></h2>
+    <p><%= review.rating %></p>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Add a comment to this restaurant", new_restaurant_review_path %>
+
+<%= link_to "<<<Back to #{params[:name]} page", restaurant_path(params[:restaurant_id]) %>
